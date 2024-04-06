@@ -5,6 +5,7 @@ import { FaCheck } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
+import '../../App.css'
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
@@ -74,13 +75,14 @@ const MyJobs = () => {
 
   return (
     <div className="my-4">
-      <div className="container mx-auto">
-        <h1 className="text-2xl text-center font-semibold mb-4">Your Posted Jobs</h1>
+      <div className="container mx-auto ">
+      <h1 className="text-3xl text-center font-bold mb-6">Your Posted Jobs</h1>
         {myJobs.length > 0 ? (
           <div className="space-y-4">
             {myJobs.map((element) => (
-              <div className="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-4" key={element._id}>
-                <div className="p-4">
+              <div className="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6" key={element._id}>
+                <h1 className="text-center text-2xl text-purple-900 font-bold mb-4">{element.title}</h1>
+                <div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <InputField
                       label="Title"
@@ -146,6 +148,16 @@ const MyJobs = () => {
                         />
                       </div>
                     )}
+                    <SelectField
+                      label="Expired"
+                      value={String(element.expired)}
+                      onChange={(e) => handleInputChange(element._id, "expired", e.target.value === 'true')}
+                      disabled={editingMode !== element._id}
+                      options={[
+                        { value: "true", label: "TRUE" },
+                        { value: "false", label: "FALSE" }
+                      ]}
+                    />
 
                     
                     <InputField
@@ -163,16 +175,7 @@ const MyJobs = () => {
                       onChange={(e) => handleInputChange(element._id, "location", e.target.value)}
                       disabled={editingMode !== element._id}
                     />
-                    <SelectField
-                      label="Expired"
-                      value={String(element.expired)}
-                      onChange={(e) => handleInputChange(element._id, "expired", e.target.value === 'true')}
-                      disabled={editingMode !== element._id}
-                      options={[
-                        { value: "true", label: "TRUE" },
-                        { value: "false", label: "FALSE" }
-                      ]}
-                    />
+                    
 
                   </div>
                   <div className="flex justify-end space-x-2 mt-4">
@@ -194,7 +197,7 @@ const MyJobs = () => {
                     ) : (
                       <button
                         onClick={() => handleEnableEdit(element._id)}
-                        className="flex items-center justify-center p-2 rounded-md bg-green-500 text-white hover:bg-green-700 transition duration-300"
+                        className="flex items-center justify-center p-2 rounded-md bg-red-400 text-white hover:bg-red-600 transition duration-300"
                       >
                         Edit
                       </button>
@@ -219,15 +222,15 @@ const MyJobs = () => {
 };
 
 const InputField = ({ label, value, onChange, disabled, elementType = "input", rows = 4 }) => (
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-semibold">{label}:</label>
+  <div className="flex flex-col mb-4">
+    <label className="mb-2 text-md font-regular text-blue-600">{label}:</label>
     {elementType === "textarea" ? (
       <textarea
         value={value}
         onChange={onChange}
         disabled={disabled}
         rows={rows}
-        className={`px-2 py-2 border rounded-md ${disabled ? 'bg-gray-100' : 'bg-white'} transition duration-300 resize-y`}
+        className={`px-3 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-300 resize-y ${disabled ? 'bg-gray-50' : 'bg-white'}`}
       />
     ) : (
       <input
@@ -235,12 +238,11 @@ const InputField = ({ label, value, onChange, disabled, elementType = "input", r
         value={value}
         onChange={onChange}
         disabled={disabled}
-        className={`px-2 py-2 border rounded-md ${disabled ? 'bg-gray-100' : 'bg-white'} transition duration-300`}
+        className={`px-3 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-300 ${disabled ? 'bg-gray-50' : 'bg-white'}`}
       />
     )}
   </div>
 );
-
 
 const SelectField = ({
   label,
@@ -248,27 +250,22 @@ const SelectField = ({
   onChange,
   disabled = false,
   options = [],
-  className = '',
-  labelClassName = '',
-  selectClassName = '',
-}) => {
-  return (
-    <div className={`flex flex-col ${className}`}>
-      {label && <label className={`mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 ${labelClassName}`}>{label}</label>}
-      <select
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 ${selectClassName}`}
-      >
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
+}) => (
+  <div className="flex flex-col mb-4">
+    <label className="mb-2 text-md font-regular text-blue-600">{label}</label>
+    <select
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+      className="bg-gray-50 border border-blue-300 text-gray-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-200 block w-full p-2.5 transition duration-300"
+    >
+      {options.map((option, index) => (
+        <option key={index} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  </div>
+);
 
 export default MyJobs;

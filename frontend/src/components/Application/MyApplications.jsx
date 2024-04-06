@@ -137,7 +137,7 @@ const StudentCard = ({ element, deleteApplication, openModal }) => {
           <img
             src={element.resume.url}
             alt="resume"
-            className="h-full w-auto" 
+            className="h-full w-auto cursor-pointer" 
             onClick={() => openModal(element.resume.url)}
           />
         </div>
@@ -163,7 +163,7 @@ const AdminCard = ({ element, openModal }) => {
           <img
             src={element.resume.url}
             alt="resume"
-            className="h-full w-auto" 
+            className="h-full w-auto cursor-pointer" 
             onClick={() => openModal(element.resume.url)}
           />
         </div>

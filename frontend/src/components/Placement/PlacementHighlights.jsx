@@ -2,13 +2,16 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const PlacementHighlights = () => {
-    const data = [
-        { year: '2019', Google: 10, Amazon: 5, Facebook: 3 },
-        { year: '2020', Google: 12, Amazon: 7, Facebook: 4 },
-        { year: '2021', Google: 15, Amazon: 11, Facebook: 5 },
-        { year: '2022', Google: 20, Amazon: 13, Facebook: 10 },
-        { year: '2023', Google: 22, Amazon: 15, Facebook: 12 },
-      ];
+  const data = [
+    { year: '2019', "to-the-new": 8, nagarro: 6, ivp: 4, "app-inventive": 3, argil: 2, byjus: 15 },
+    { year: '2020', "to-the-new": 11, nagarro: 8, ivp: 6, "app-inventive": 5, argil: 3, byjus: 12 },
+    { year: '2021', "to-the-new": 10, nagarro: 9, ivp: 7, "app-inventive": 6, argil: 4, byjus: 18 },
+    { year: '2022', "to-the-new": 14, nagarro: 7, ivp: 5, "app-inventive": 4, argil: 5, byjus: 10 },
+    { year: '2023', "to-the-new": 12, nagarro: 10, ivp: 8, "app-inventive": 7, argil: 6, byjus: 20 }
+];
+
+
+
   return (
     <>
         <h2 className="text-3xl font-bold text-center text-gray-800 m-8">PLACEMENT HIGHLIGHTS</h2>

@@ -37,7 +37,7 @@ const PostQues = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-8">
+    <div className=" min-h-screen pt-8">
       <div className="container mx-auto max-w-4xl p-8 bg-white rounded-lg shadow">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Post New Interview Question</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
