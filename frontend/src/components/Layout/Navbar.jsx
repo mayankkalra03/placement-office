@@ -29,7 +29,8 @@ const Navbar = () => {
     <nav className={`bg-gray-800 p-5 ${isAuthorized ? "block" : "hidden"}`}>
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" onClick={() => setShow(false)} className="text-white hover:text-gray-200 transition duration-150 flex items-center mr-3 ">
-          <img src="/logo.png" alt="logo" className="h-10 mr-2" />
+          <img src="/logo.png" alt="logo" className="h-12 mr-2" />
+          <span className="font-semibold text-xl text-blue-50 font-serif">Placement Office</span>
         </Link>
         <div className="md:hidden">
           {show ? (

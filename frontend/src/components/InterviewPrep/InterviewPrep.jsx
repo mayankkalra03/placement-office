@@ -164,22 +164,23 @@ const InterviewPrep = () => {
                 <div className="mt-4">
                   {editingMode === element._id ? (
                     <>
+
                       <input
                         type="text"
                         value={editData.subject}
                         onChange={(e) => setEditData({ ...editData, subject: e.target.value })}
-                        className="m-2 p-2 border rounded"
+                        className="m-2 p-2 border-2 rounded"
                       />
                       <input
                         type="text"
                         value={editData.question}
                         onChange={(e) => setEditData({ ...editData, question: e.target.value })}
-                        className="m-2 p-2 border rounded"
-                      />
+                        className="m-2 p-2 border-2 rounded w-full"
+                        />
                       <textarea
                         value={editData.answer}
                         onChange={(e) => setEditData({ ...editData, answer: e.target.value })}
-                        className="w-full m-2 p-2 border rounded"
+                        className="w-full m-2 p-2 border-2 rounded"
                       />
                     </>
                   ) : (

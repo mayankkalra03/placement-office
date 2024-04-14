@@ -80,8 +80,8 @@ const MyJobs = () => {
         {myJobs.length > 0 ? (
           <div className="space-y-4">
             {myJobs.map((element) => (
-              <div className="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6" key={element._id}>
-                <h1 className="text-center text-2xl text-purple-900 font-bold mb-4">{element.title}</h1>
+              <div className="card bg-white bg-opacity-60 border border-blue-50 shadow-lg rounded-lg overflow-hidden m-4 p-6" key={element._id}>
+                <h1 className="text-center text-2xl text-blue-900 font-bold mb-4">{element.title}</h1>
                 <div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <InputField

@@ -37,12 +37,12 @@ const Jobs = () => {
           {jobs.jobs &&
             jobs.jobs.map((element) => (
               <div
-                className="card bg-white shadow-md hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg"
+                className="card bg-white transition-transform hover:scale-105 hover:bg-blue-50 shadow-2xl duration-300 p-4 rounded-lg cursor-pointer"
                 key={element._id}
               >
                 <p className="text-xl font-semibold">{element.title}</p>
-                <p className="text-gray-600">{element.category}</p>
-                <p className="mb-4 text-gray-600">{element.country}</p>
+                <p>{element.category}</p>
+                <p className="mb-4">{element.country}</p>
                 <Link
                   to={`/job/${element._id}`}
                   className="inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300"

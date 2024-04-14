@@ -9,7 +9,20 @@ const JobDetails = () => {
   const [job, setJob] = useState({});
   const navigateTo = useNavigate();
   const { isAuthorized, user } = useContext(Context);
-
+  const convertToIST = (utcDate) => {
+    const date = new Date(utcDate);
+    const options = {
+      timeZone: 'Asia/Kolkata',
+      hour12: false,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+    return date.toLocaleString('en-IN', options);
+  };
   useEffect(() => {
     const fetchJob = async () => {
       try {
@@ -56,7 +69,7 @@ const JobDetails = () => {
               Description: <span className="font-semibold">{job.description}</span>
             </p>
             <p>
-              Job Posted On: <span className="font-semibold">{job.jobPostedOn}</span>
+              Job Posted On: <span className="font-semibold">{convertToIST(job.jobPostedOn)}</span>
             </p>
             <p>
               Salary:{" "}

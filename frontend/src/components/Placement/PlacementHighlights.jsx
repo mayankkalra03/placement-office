@@ -8,36 +8,35 @@ const PlacementHighlights = () => {
     { year: '2021', "to-the-new": 10, nagarro: 9, ivp: 7, "app-inventive": 6, argil: 4, byjus: 18 },
     { year: '2022', "to-the-new": 14, nagarro: 7, ivp: 5, "app-inventive": 4, argil: 5, byjus: 10 },
     { year: '2023', "to-the-new": 12, nagarro: 10, ivp: 8, "app-inventive": 7, argil: 6, byjus: 20 }
-];
-
-
+  ];
 
   return (
     <>
-        <h2 className="text-3xl font-bold text-center text-gray-800 m-8">PLACEMENT HIGHLIGHTS</h2>
-    
-    <ResponsiveContainer width="95%" height={400}>
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        {Object.keys(data[0]).filter(key => key !== 'year').map((key, index) => (
-            <Line type="monotone" dataKey={key} stroke={getRandomColor()} key={index} />
+      <h2 className="text-3xl font-bold text-center text-gray-800 m-8">Placement Highlights</h2>
+      <div className='bg-white bg-opacity-80 ml-8 mr-8 p-8 rounded-lg shadow-xl'>
+        <ResponsiveContainer width="95%" height={400}>
+          <LineChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            {Object.keys(data[0]).filter(key => key !== 'year').map((key, index) => (
+              <Line type="monotone" dataKey={key} stroke={getRandomColor()} key={index} />
             ))}
-      </LineChart>
-    </ResponsiveContainer>
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </>
   );
 };
