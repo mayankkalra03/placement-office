@@ -39,19 +39,19 @@ const ContactUs = () => {
         <form className="contact-form space-y-4" onSubmit={sendEmail}>
         <div>
           <label htmlFor="user_name" className="text-gray-600">Name</label>
-          <input type="text" name="user_name" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+          <input type="text" required name="user_name" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
         </div>
         <div>
           <label htmlFor="user_email" className="text-gray-600">Email</label>
-          <input type="email" name="user_email" className="mt-1 block w-full px-3 py-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+          <input type="email" required name="user_email" className="mt-1 block w-full px-3 py-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
         </div>
         <div>
           <label htmlFor="subject" className="text-gray-600">Subject</label>
-          <input type="text" name="subject" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+          <input type="text" required name="subject" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
         </div>
         <div>
           <label htmlFor="message" className="text-gray-600">Message</label>
-          <textarea name="message" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+          <textarea name="message" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
         </div>
         <input type="submit" value="Send" className="mt-4 px-4 py-2 bg-indigo-600 text-white font-bold rounded hover:bg-indigo-700 cursor-pointer block w-full" />
         </form>
