@@ -22,7 +22,7 @@ const MyJobs = () => {
 
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/job/getmyjobs", { withCredentials: true });
+        const { data } = await axios.get("https://placement-office.vercel.app/job/getmyjobs", { withCredentials: true });
         setMyJobs(data.myJobs);
       } catch (error) {
         toast.error(error.response.data.message);
@@ -43,7 +43,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     try {
-      const res = await axios.put(`http://localhost:3001/job/update/${jobId}`, updatedJob, {
+      const res = await axios.put(`https://placement-office.vercel.app/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       });
       toast.success(res.data.message);
@@ -55,7 +55,7 @@ const MyJobs = () => {
 
   const handleDeleteJob = async (jobId) => {
     try {
-      const res = await axios.delete(`http://localhost:3001/job/delete/${jobId}`, {
+      const res = await axios.delete(`https://placement-office.vercel.app/job/delete/${jobId}`, {
         withCredentials: true,
       });
       toast.success(res.data.message);

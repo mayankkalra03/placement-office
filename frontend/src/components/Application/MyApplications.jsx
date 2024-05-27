@@ -18,7 +18,7 @@ const MyApplications = () => {
     try {
       if (user && user.role === "Admin") {
         axios
-          .get("http://localhost:3001/application/admin/getall", {
+          .get("https://placement-office.vercel.app/application/admin/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -26,7 +26,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("http://localhost:3001/application/student/getall", {
+          .get("https://placement-office.vercel.app/application/student/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -45,7 +45,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:3001/application/delete/${id}`, {
+        .delete(`https://placement-office.vercel.app/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

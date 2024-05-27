@@ -23,7 +23,7 @@ const PostQues = () => {
     const quesData = { subject, question, answer };
 
     try {
-      const response = await axios.post('http://localhost:3001/interview/postques', quesData, {
+      const response = await axios.post('https://placement-office.vercel.app/interview/postques', quesData, {
         withCredentials: true,
         headers: { 'Content-Type': 'application/json' },
       });

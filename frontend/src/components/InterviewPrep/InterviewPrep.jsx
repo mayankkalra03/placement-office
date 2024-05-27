@@ -18,7 +18,7 @@ const InterviewPrep = () => {
   useEffect(() => {
     const fetchQues = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/interview/getallques", {
+        const res = await axios.get("https://placement-office.vercel.app/interview/getallques", {
           withCredentials: true,
         });
         setQues(res.data.ques); 
@@ -61,7 +61,7 @@ const InterviewPrep = () => {
     if (editingMode !== quesId) return;
   
     try {
-      const res = await axios.put(`http://localhost:3001/interview/updateques/${quesId}`, {
+      const res = await axios.put(`https://placement-office.vercel.app/interview/updateques/${quesId}`, {
         subject: editData.subject,
         question: editData.question,
         answer: editData.answer,
@@ -86,7 +86,7 @@ const InterviewPrep = () => {
 
   const handleDeleteQues = async (quesId) => {
     try {
-      const res = await axios.delete(`http://localhost:3001/interview/deleteques/${quesId}`, {
+      const res = await axios.delete(`https://placement-office.vercel.app/interview/deleteques/${quesId}`, {
         withCredentials: true,
       });
       toast.success(res.data.message);

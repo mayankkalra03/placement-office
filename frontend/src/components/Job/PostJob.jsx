@@ -33,7 +33,7 @@ const PostJob = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/job/post',
+        'https://placement-office.vercel.app/job/post',
         postData,
         {
           withCredentials: true,
