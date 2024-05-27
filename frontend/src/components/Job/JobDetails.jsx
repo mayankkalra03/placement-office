@@ -26,7 +26,7 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`https://placement-office.vercel.app/job/${id}`, {
+        const response = await axios.get(`https://placementoffice.onrender.com/job/${id}`, {
           withCredentials: true,
         });
         setJob(response.data.job);

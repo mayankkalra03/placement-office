@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("https://placement-office.vercel.app/user/logout", {
+      const response = await axios.get("https://placementoffice.onrender.com/user/logout", {
         withCredentials: true,
       });
       toast.success(response.data.message);

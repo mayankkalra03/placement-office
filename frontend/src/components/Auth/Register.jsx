@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://placement-office.vercel.app/user/register",
+        "https://placementoffice.onrender.com/user/register",
         { name, email, phone, password, role },
         {
           headers: {
