@@ -65,7 +65,7 @@ const Application = () => {
     <section className="py-8">
       <div className="max-w-4xl mx-auto px-4">
         <h3 className="text-xl font-bold mb-6">Application Form</h3>
-        <form onSubmit={handleApplication} className="space-y-4">
+        <div className="space-y-4">
           <input
             className="w-full p-2 border border-gray-300 rounded-md"
             type="text"
@@ -111,10 +111,14 @@ const Application = () => {
               onChange={handleFileChange}
             />
           </div>
-          <button type="submit" className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          <button
+            type="button"
+            onClick={handleApplication}
+            className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
             Submit Application
           </button>
-        </form>
+        </div>
       </div>
     </section>
   );

@@ -46,13 +46,20 @@ const Register = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center m-4 ">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center m-4">
       <div className="md:w-1/2 max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
         <div className="px-6 py-4">
-          <h3 className="text-2xl font-semibold text-center text-gray-700">Create a new account</h3>
-          <form className="space-y-6" onSubmit={handleRegister}>
-          <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-700">Register As</label>
+          <h3 className="text-2xl font-semibold text-center text-gray-700">
+            Create a new account
+          </h3>
+          <div className="space-y-6">
+            <div>
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Register As
+              </label>
               <div className="mt-1 relative">
                 <select
                   id="role"
@@ -70,7 +77,12 @@ const Register = () => {
             </div>
 
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
               <div className="mt-1 relative">
                 <input
                   id="name"
@@ -88,7 +100,12 @@ const Register = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email Address
+              </label>
               <div className="mt-1 relative">
                 <input
                   id="email"
@@ -106,7 +123,12 @@ const Register = () => {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Phone Number
+              </label>
               <div className="mt-1 relative">
                 <input
                   id="phone"
@@ -124,7 +146,12 @@ const Register = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Password
+              </label>
               <div className="mt-1 relative">
                 <input
                   id="password"
@@ -143,15 +170,19 @@ const Register = () => {
 
             <div>
               <button
-                type="submit"
+                type="button"
+                onClick={handleRegister}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Register
               </button>
             </div>
-          </form>
+          </div>
           <div className="mt-6 text-center">
-            <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+            <Link
+              to="/login"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
               Already have an account? Login Now
             </Link>
           </div>
